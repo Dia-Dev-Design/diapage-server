@@ -1,8 +1,8 @@
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-    host: 'smtp.office365.com',
-    port: 465,
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT * 1,
     secure: false,// true for 465, false for other ports
     auth: {
         user: process.env.SMTP_AUTH_USER, // your GoDaddy email
